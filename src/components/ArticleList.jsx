@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
+import TopicSearchBar from "./TopicSearchBar";
 
 export default class ArticleList extends Component {
   state = { articles: [], isLoading: true };
@@ -11,12 +12,13 @@ export default class ArticleList extends Component {
     }
     return (
       <div>
+        <TopicSearchBar topicFetcher={this.topicFetcher} />
         <h2>Article List</h2>
         <ul>
           {this.state.articles.map(article => {
             // return <li key={article.article_id}>{article.title}</li>;
             return (
-              <li>
+              <li key={article.article_id}>
                 {" "}
                 <ArticleCard key={article.article_id} article={article} />
               </li>
@@ -27,9 +29,14 @@ export default class ArticleList extends Component {
     );
   }
 
+  topicFetcher = articles => {
+    this.setState({ articles: articles });
+  };
+
   componentDidMount() {
     console.log("comp did mount- article list");
     this.fetchArticles();
+    this.topicFetcher();
   }
 
   fetchArticles() {

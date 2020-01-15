@@ -5,10 +5,9 @@ export default class TopicSearchBar extends Component {
   state = {
     topicSearch: null,
     isLoading: true,
-    articles: []
+ 
   };
 
-  
   render() {
     return (
       <div>
@@ -20,7 +19,7 @@ export default class TopicSearchBar extends Component {
             onChange={event => {
               this.handleChange(event.target.value);
             }}
-            ></input>
+          ></input>
           <button>Search</button>
         </form>
       </div>
@@ -30,25 +29,25 @@ export default class TopicSearchBar extends Component {
   handleChange = eventValue => {
     this.setState({ topicSearch: eventValue });
   };
-  
+
   handleSubmit = event => {
     event.preventDefault();
     // const { topicSearch } = this.state;
     this.filterByTopic();
   };
-  
-  
+
   filterByTopic() {
     const { topicSearch } = this.state;
     console.log("filter");
     return axios
-    .get(
-      `https://amelias-news-api.herokuapp.com/api/articles?topic=${topicSearch}`
+      .get(
+        `https://amelias-news-api.herokuapp.com/api/articles?topic=${topicSearch}`
       )
       .then(response =>
-        this.setState({ articles: response.data.articles, isLoading: false })
-        );
-      }
+        // this.setState({ articles: response.data.articles, isLoading: false }, () => { this.props} )
+        this.props.topicFetcher(response.data.articles)
+      );
+  }
 }
 
 // handleChange = event => {

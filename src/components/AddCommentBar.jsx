@@ -4,10 +4,10 @@ import CommentList from "./CommentList";
 
 export default class AddCommentBar extends Component {
   state = {
-    currentArticle: null,
+    currentArticle: "",
     user: "grumpy19",
     // newComment: null,
-    text: null
+    text: ""
   };
 
   render() {
@@ -50,12 +50,11 @@ export default class AddCommentBar extends Component {
     const newComment = { username: user, body: text };
     // console.log(newComment);
     // console.log(article_id);
-
     return axios
       .post(
         `https://amelias-news-api.herokuapp.com/api/articles/${article_id}/comments`,
         newComment
       )
-      .then(({ data }) => data.comments);
+      .then(({ data }) => this.props.addComment(data));
   }
 }

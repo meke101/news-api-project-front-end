@@ -7,7 +7,7 @@ export default function ArticleCard({ article }) {
 
   return (
     <div>
-      <Link to={`${article_id}`}>
+      <Link to={`/articles/${article_id}`}>
         <h4>Article Card - {article.title}</h4>
       </Link>
     </div>

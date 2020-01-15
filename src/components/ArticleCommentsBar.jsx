@@ -7,7 +7,7 @@ export default function ArticleCommentsBar({ article_id }) {
   return (
     <div>
       <p>ArticleCOMMENTSSSS bar</p>
-      <AddCommentBar article_id={article_id} /> 
+      {/* <AddCommentBar article_id={article_id} />  */}
       <CommentList article_id={article_id} />
     </div>
   );
