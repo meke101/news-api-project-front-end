@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "@reach/router";
 import VoteBar from "./VoteBar";
 
-
 export default function ArticleCard({ article }) {
   const { article_id, title, author, votes, topic } = article;
   // console.log(article_id);
@@ -14,7 +13,7 @@ export default function ArticleCard({ article }) {
           Article Card - {title} - {author} - {topic} - {votes} :
         </h4>
       </Link>
-        <VoteBar article_id={article_id}/>
+      <VoteBar article_id={article_id} votes={votes} />
     </div>
   );
 }

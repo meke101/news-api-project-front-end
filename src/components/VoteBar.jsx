@@ -7,6 +7,14 @@ export default class VoteBar extends Component {
     voteDifference: 0
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, "PREVPROP");
+    console.log(this.props);
+    if (!(this.props === prevProps)) {
+      this.setState({ voteDifference: 0 });
+    }
+  }
+
   render() {
     const { votes } = this.props;
     const { voteDifference } = this.state;
@@ -64,7 +72,7 @@ export default class VoteBar extends Component {
           `https://amelias-news-api.herokuapp.com/api/articles/${article_id}`,
           newVote
         )
-        .then(() => console.log("patched article vote"));
+        .then(res => console.log(res.data));
     }
   };
 }

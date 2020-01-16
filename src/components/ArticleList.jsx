@@ -39,7 +39,7 @@ export default class ArticleList extends Component {
   componentDidMount() {
     console.log("comp did mount- article list");
     this.fetchArticles();
-    this.topicFetcher();
+    // this.topicFetcher();
   }
 
   fetchArticles() {
