@@ -3,13 +3,19 @@ import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import TopicSearchBar from "./TopicSearchBar";
 import SortBar from "./SortBar";
+import ErrorPage from "./ErrorPage";
 
 export default class ArticleList extends Component {
-  state = { articles: [], isLoading: true };
+  state = { articles: [], isLoading: true, err: null };
   render() {
     console.log(this.state.articles);
+    const { err } = this.state;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
+    }
+
+    if (err) {
+      return <ErrorPage {...err} />;
     }
     return (
       <div>
@@ -48,6 +54,12 @@ export default class ArticleList extends Component {
       .get("https://amelias-news-api.herokuapp.com/api/articles")
       .then(response =>
         this.setState({ articles: response.data.articles, isLoading: false })
-      );
+      )
+      .catch(err => {
+        this.setState({
+          err: { status: err.response.status, msg: err.response.msg },
+          isLoading: false
+        });
+      });
   }
 }

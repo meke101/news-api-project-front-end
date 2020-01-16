@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default class ArticleSingleBody extends Component {
   state = {
-    body: { body: "no body" },
+    body: { body: "" },
     isLoading: true
   };
 
@@ -16,7 +16,7 @@ export default class ArticleSingleBody extends Component {
     const { title, body, topic, author, votes } = this.state.article;
 
     return (
-      <div>
+      <div className="singleArticleBox">
         <h3>Article single body</h3>
         <p> {title}</p>
         <p> {topic}</p>

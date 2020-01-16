@@ -13,6 +13,23 @@
   }
 }
 
+.comments{
+  background-color: #5770a3;
+}
+
+.singleArticleBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-left: 1em;
+  border-radius: 25px;
+  background: #0F8B8D;
+  padding: 20px;
+  width: 90%;
+  height: initial;
+  margin-bottom: 3em;
+  color: rgb(149, 155, 44);
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -5,7 +5,7 @@ import CommentCard from "./CommentCard";
 
 export default class CommentList extends Component {
   state = {
-    comments: [{ body: "no comments" }],
+    comments: [{ body: "" }],
     isLoading: true
   };
 
@@ -16,9 +16,9 @@ export default class CommentList extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <div>
+      <div className="comments" >
         <AddCommentBar article_id={article_id} addComment={this.addComment} />
-        <p>Comments list</p>
+        <p >Comments list </p>
         <ul>
           {this.state.comments.map(comment => {
             return (
@@ -48,8 +48,8 @@ export default class CommentList extends Component {
   deleteComment = data => {
     // ['a','b','c']
     // 'b'
-    console.log("delete comment - commentLIst");
-    console.log(">>>>delRenProp>>>", data);
+    // console.log("delete comment - commentLIst");
+    // console.log(">>>>delRenProp>>>", data);
     this.setState(currentState => {
       const filteredComments = currentState.comments.filter(
         comment => comment.comment_id !== data
@@ -61,7 +61,7 @@ export default class CommentList extends Component {
   };
 
   componentDidMount() {
-    console.log("comp did mount comments");
+    // console.log("comp did mount comments");
     this.fetchComments();
   }
 

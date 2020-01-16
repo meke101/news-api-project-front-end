@@ -4,8 +4,7 @@ import axios from "axios";
 export default class TopicSearchBar extends Component {
   state = {
     topicSearch: "",
-    isLoading: true,
- 
+    isLoading: true
   };
 
   render() {
@@ -40,12 +39,14 @@ export default class TopicSearchBar extends Component {
     const { topicSearch } = this.state;
     console.log("filter");
     return axios
-      .get(
-        `https://amelias-news-api.herokuapp.com/api/articles?topic=${topicSearch}`
-      )
+      .get(`https://amelias-news-api.herokuapp.com/api/articles?`, {
+        params: {
+          topic: topicSearch
+        }
+      })
       .then(response =>
         // this.setState({ articles: response.data.articles, isLoading: false }, () => { this.props} )
-        
+
         this.props.topicFetcher(response.data.articles)
       );
   }

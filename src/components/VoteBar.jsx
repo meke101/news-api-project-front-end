@@ -8,8 +8,8 @@ export default class VoteBar extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, "PREVPROP");
-    console.log(this.props);
+    // console.log(prevProps, "PREVPROP");
+    // console.log(this.props);
     if (!(this.props === prevProps)) {
       this.setState({ voteDifference: 0 });
     }
@@ -18,7 +18,7 @@ export default class VoteBar extends Component {
   render() {
     const { votes } = this.props;
     const { voteDifference } = this.state;
-    console.log("votes", votes, "+", voteDifference);
+    // console.log("votes", votes, "+", voteDifference);
     return (
       <div>
         <p>Likes: {votes + voteDifference} </p>
@@ -55,9 +55,9 @@ export default class VoteBar extends Component {
     });
 
     const { comment_id, article_id } = this.props;
-    console.log(article_id, "VOTE BAR");
+    // console.log(article_id, "VOTE BAR");
     const { clicked } = this.state;
-    console.log(clicked, "STATE");
+    // console.log(clicked, "STATE");
 
     if (comment_id) {
       return axios
