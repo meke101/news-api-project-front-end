@@ -11,6 +11,7 @@ export default class CommentList extends Component {
 
   render() {
     const { article_id } = this.props;
+    const { comments } = this.state;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
@@ -20,7 +21,6 @@ export default class CommentList extends Component {
         <p>Comments list</p>
         <ul>
           {this.state.comments.map(comment => {
-            // return <li key={comment.comment_id}>{comment.body}</li>;
             return (
               <li key={comment.comment_id}>
                 {" "}
@@ -28,6 +28,7 @@ export default class CommentList extends Component {
                   key={comment.comment_id}
                   comment={comment}
                   deleteComment={this.deleteComment}
+                  patchCommentVote={this.patchCommentVote}
                 />
               </li>
             );

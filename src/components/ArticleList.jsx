@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import TopicSearchBar from "./TopicSearchBar";
+import SortBar from "./SortBar";
 
 export default class ArticleList extends Component {
   state = { articles: [], isLoading: true };
@@ -13,6 +14,8 @@ export default class ArticleList extends Component {
     return (
       <div>
         <TopicSearchBar topicFetcher={this.topicFetcher} />
+        <h3>SortBar</h3>
+        <SortBar topicFetcher={this.topicFetcher} />
         <h2>Article List</h2>
         <ul>
           {this.state.articles.map(article => {

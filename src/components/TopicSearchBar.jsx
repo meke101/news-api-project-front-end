@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default class TopicSearchBar extends Component {
   state = {
-    topicSearch: null,
+    topicSearch: "",
     isLoading: true,
  
   };
@@ -45,6 +45,7 @@ export default class TopicSearchBar extends Component {
       )
       .then(response =>
         // this.setState({ articles: response.data.articles, isLoading: false }, () => { this.props} )
+        
         this.props.topicFetcher(response.data.articles)
       );
   }

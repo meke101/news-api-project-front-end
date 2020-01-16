@@ -13,12 +13,13 @@ export default class ArticleSingleBody extends Component {
       return <p>Loading...</p>;
     }
 
-    const { title, body,  topic, author, votes} = this.state.article; 
-    
+    const { title, body, topic, author, votes } = this.state.article;
+
     return (
       <div>
         <h3>Article single body</h3>
         <p> {title}</p>
+        <p> {topic}</p>
         <p> {body}</p>
         <p> {author}</p>
         <p> {votes}</p>
