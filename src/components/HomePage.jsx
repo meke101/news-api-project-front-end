@@ -8,7 +8,6 @@ export default function HomePage() {
     <div>
       <h1 id="ArticlesTitle">Welcome to our list of articles</h1>
 
-      {/* <TopicSearchBar /> */}
       <ArticleList />
     </div>
   );

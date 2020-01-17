@@ -2,9 +2,7 @@ import React from "react";
 import axios from "axios";
 
 export default function SortBar({ topicFetcher }) {
-  console.log({ topicFetcher }, "PPPP");
   const sortArticles = sortBy => {
-    console.log(sortBy, "THIS SORTBY");
     return axios
       .get(`https://amelias-news-api.herokuapp.com/api/articles?`, {
         params: {

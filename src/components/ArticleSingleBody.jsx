@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "@reach/router";
 
 export default class ArticleSingleBody extends Component {
   state = {
@@ -8,7 +9,6 @@ export default class ArticleSingleBody extends Component {
   };
 
   render() {
-    // const { article_id } = this.props;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
@@ -17,18 +17,19 @@ export default class ArticleSingleBody extends Component {
 
     return (
       <div className="singleArticleBox">
-        <h3>Article single body</h3>
-        <p> {title}</p>
-        <p> {topic}</p>
+        <Link to={`/articles/`}>
+          <button>Home</button>
+        </Link>
+        <h3> {title}</h3>
+        <p> Topic: {topic}</p>
         <p> {body}</p>
         <p> {author}</p>
-        <p> {votes}</p>
+        <p> Votes: {votes}</p>
       </div>
     );
   }
 
   componentDidMount() {
-    console.log("comp did mount single article");
     this.fetchArticle();
   }
 

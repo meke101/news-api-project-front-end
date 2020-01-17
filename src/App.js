@@ -15,17 +15,20 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Router>
-          <HomePage path="/" />
-          <HomePage path="/articles" />
-          <ArticleSinglePage path="/articles/:article_id" />
-          <ArticleSinglePage path="/articles/:article_id/comments/" />
-          <CommentSinglePage path="/comments/:comment_id" />
-          <ErrorPage status={404} msg={"Page not found"} default />
-        </Router>
-      </div>
+      <header class="header">
+        My header
+        <div className="App">
+          <Header />
+          <Router>
+            <HomePage path="/" />
+            <HomePage path="/articles" />
+            <ArticleSinglePage path="/articles/:article_id" />
+            <ArticleSinglePage path="/articles/:article_id/comments/" />
+            <CommentSinglePage path="/comments/:comment_id" />
+            <ErrorPage status={404} msg={"Page not found"} default />
+          </Router>
+        </div>
+      </header>
     );
   }
 }

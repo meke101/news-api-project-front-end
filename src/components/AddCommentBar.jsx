@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import CommentList from "./CommentList";
 
 export default class AddCommentBar extends Component {
   state = {
     currentArticle: "",
     user: "grumpy19",
-    // newComment: null,
     text: ""
   };
 
@@ -32,29 +30,26 @@ export default class AddCommentBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // console.log(" add comment handle submit");
-    // const { text } = this.state;
-    // console.log(text, "<<<< second ");
+  
     this.addComment();
+    this.setState({ text: "" });
   };
 
   handleChange = eventValue => {
-    console.log("add comment handle change");
     this.setState({ text: eventValue });
-    console.log(this.state.text, "first <<<<<");
   };
 
   addComment() {
     const { user, text } = this.state;
     const { article_id } = this.props;
     const newComment = { username: user, body: text };
-    // console.log(newComment);
-    // console.log(article_id);
-    return axios
-      .post(
-        `https://amelias-news-api.herokuapp.com/api/articles/${article_id}/comments`,
-        newComment
-      )
-      .then(({ data }) => this.props.addComment(data));
+    if (newComment.body.length > 0) {
+      return axios
+        .post(
+          `https://amelias-news-api.herokuapp.com/api/articles/${article_id}/comments`,
+          newComment
+        )
+        .then(({ data }) => this.props.addComment(data));
+    }
   }
 }

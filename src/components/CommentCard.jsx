@@ -1,12 +1,10 @@
 import React from "react";
-// import { Link } from "@reach/router";
 import DeleteCommentButton from "./DeleteCommentButton";
 
 import VoteBar from "./VoteBar";
 
 export default function CommentCard({ comment, deleteComment, patchCommentVote }) {
   const { comment_id, body, author, votes } = comment;
-  // console.log(comment_id);
 
   return (
     <div>
@@ -18,7 +16,6 @@ export default function CommentCard({ comment, deleteComment, patchCommentVote }
         deleteComment={deleteComment}
       />
       <VoteBar comment_id={comment_id}
-        // patchCommentVote={patchCommentVote} 
         votes={votes}/>
     </div>
   );

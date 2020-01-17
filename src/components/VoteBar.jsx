@@ -8,8 +8,6 @@ export default class VoteBar extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log(prevProps, "PREVPROP");
-    // console.log(this.props);
     if (!(this.props === prevProps)) {
       this.setState({ voteDifference: 0 });
     }
@@ -17,12 +15,12 @@ export default class VoteBar extends Component {
 
   render() {
     const { votes } = this.props;
-    const { voteDifference } = this.state;
-    // console.log("votes", votes, "+", voteDifference);
+    const { voteDifference, clicked } = this.state;
     return (
       <div>
         <p>Likes: {votes + voteDifference} </p>
         <button
+          disabled={clicked}
           id="Like"
           onClick={() => {
             this.patchVote(1);
@@ -32,6 +30,7 @@ export default class VoteBar extends Component {
         </button>
 
         <button
+          disabled={clicked}
           id="Dislike"
           onClick={() => {
             this.patchVote(-1);
@@ -55,24 +54,17 @@ export default class VoteBar extends Component {
     });
 
     const { comment_id, article_id } = this.props;
-    // console.log(article_id, "VOTE BAR");
-    const { clicked } = this.state;
-    // console.log(clicked, "STATE");
 
     if (comment_id) {
-      return axios
-        .patch(
-          `https://amelias-news-api.herokuapp.com/api/comments/${comment_id}`,
-          newVote
-        )
-        .then(() => console.log("patched comment vote"));
+      return axios.patch(
+        `https://amelias-news-api.herokuapp.com/api/comments/${comment_id}`,
+        newVote
+      );
     } else if (article_id) {
-      return axios
-        .patch(
-          `https://amelias-news-api.herokuapp.com/api/articles/${article_id}`,
-          newVote
-        )
-        .then(res => console.log(res.data));
+      return axios.patch(
+        `https://amelias-news-api.herokuapp.com/api/articles/${article_id}`,
+        newVote
+      );
     }
   };
 }
