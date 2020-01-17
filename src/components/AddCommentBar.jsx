@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default class AddCommentBar extends Component {
   state = {
-    currentArticle: "",
+
     user: "grumpy19",
     text: ""
   };

@@ -19,9 +19,9 @@ export default class ArticleList extends Component {
     return (
       <div class="wrapper">
         <div>
-          <TopicSearchBar topicFetcher={this.topicFetcher} />
+          <TopicSearchBar articleListRerender={this.articleListRerender} />
           <h3>SortBar</h3>
-          <SortBar topicFetcher={this.topicFetcher} />
+          <SortBar articleListRerender={this.articleListRerender} />
           <h4>Article List</h4>
           <ul>
             {this.state.articles.map(article => {

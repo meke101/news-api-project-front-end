@@ -11,7 +11,6 @@ export default class CommentList extends Component {
 
   render() {
     const { article_id } = this.props;
-    const { comments } = this.state;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }

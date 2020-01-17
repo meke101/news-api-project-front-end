@@ -48,7 +48,7 @@ export default class TopicSearchBar extends Component {
       .then(response =>
        
 
-        this.props.topicFetcher(response.data.articles)
+        this.props.articleListRerender(response.data.articles)
       );
   }
 }

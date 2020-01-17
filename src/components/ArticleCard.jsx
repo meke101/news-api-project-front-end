@@ -14,8 +14,7 @@ export default function ArticleCard({ article }) {
     <div>
       <Link to={`/articles/${article_id}`}>
         <p>
-          Article Card - {title} - {author} - {topic} - {votes} -{" "}
-          {formattedDate} - {formattedDate} :
+          <b>{title} </b> - <i> author:</i> {author} - <i> topic:</i> {topic} - <i> posted:</i> {formattedDate} :
         </p>
       </Link>
       <VoteBar article_id={article_id} votes={votes} />

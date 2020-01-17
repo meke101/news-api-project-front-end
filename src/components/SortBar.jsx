@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default function SortBar({ topicFetcher }) {
+export default function SortBar({ articleListRerender }) {
   const sortArticles = sortBy => {
     return axios
       .get(`https://amelias-news-api.herokuapp.com/api/articles?`, {
@@ -9,7 +9,7 @@ export default function SortBar({ topicFetcher }) {
           sort_by: sortBy
         }
       })
-      .then(response => topicFetcher(response.data.articles));
+      .then(response => articleListRerender(response.data.articles));
   };
   return (
     <div>
