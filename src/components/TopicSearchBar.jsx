@@ -4,10 +4,18 @@ import axios from "axios";
 export default class TopicSearchBar extends Component {
   state = {
     topicSearch: "",
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   render() {
+    if (this.state.err !== null) {
+      return (
+        <div>
+          <p> Topic not found </p>
+        </div>
+      );
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -45,10 +53,12 @@ export default class TopicSearchBar extends Component {
           topic: topicSearch
         }
       })
-      .then(response =>
-       
-
-        this.props.articleListRerender(response.data.articles)
-      );
+      .then(response => this.props.articleListRerender(response.data.articles))
+      .catch(err => {
+        this.setState({
+          err: { status: err.response.status, msg: err.response.data.msg },
+          isLoading: false
+        });
+      });
   }
 }

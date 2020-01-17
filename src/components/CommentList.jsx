@@ -48,7 +48,6 @@ export default class CommentList extends Component {
       const filteredComments = currentState.comments.filter(
         comment => comment.comment_id !== data
       );
-      console.log(filteredComments, "FITL");
 
       return { comments: filteredComments };
     });
@@ -66,6 +65,13 @@ export default class CommentList extends Component {
       )
       .then(response =>
         this.setState({ comments: response.data.comments, isLoading: false })
-      );
+      )
+      .catch(err => {
+        this.setState({
+          err: { status: err.response.status, msg: err.response.data.msg },
+          isLoading: false
+        });
+      });
   }
 }
+

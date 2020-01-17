@@ -1,14 +1,32 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Router } from "@reach/router";
 import { Link } from "@reach/router";
+import ErrorPage from "./ErrorPage";
 
 export default class ArticleSingleBody extends Component {
   state = {
     body: { body: "" },
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   render() {
+    console.log(this.state.err, "EEEERRRRR");
+    if (this.state.err !== null) {
+      return (
+        <div>
+          <Router>
+            <ErrorPage
+              default
+              status={this.state.err.status}
+              msg={this.state.err.msg}
+            />
+          </Router>
+        </div>
+      );
+    }
+
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
@@ -39,6 +57,12 @@ export default class ArticleSingleBody extends Component {
       .get(`https://amelias-news-api.herokuapp.com/api/articles/${article_id} `)
       .then(response =>
         this.setState({ article: response.data.article, isLoading: false })
-      );
+      )
+      .catch(err => {
+        this.setState({
+          err: { status: err.response.status, msg: err.response.data.msg },
+          isLoading: false
+        });
+      });
   }
 }

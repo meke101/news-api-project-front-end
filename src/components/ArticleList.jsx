@@ -20,7 +20,6 @@ export default class ArticleList extends Component {
       <div class="wrapper">
         <div>
           <TopicSearchBar articleListRerender={this.articleListRerender} />
-          <h3>SortBar</h3>
           <SortBar articleListRerender={this.articleListRerender} />
           <h4>Article List</h4>
           <ul>

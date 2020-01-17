@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
-
 import { Router } from "@reach/router";
 import HomePage from "./components/HomePage";
 import ArticleSinglePage from "./components/ArticleSinglePage";
@@ -16,7 +15,7 @@ export default class App extends Component {
   render() {
     return (
       <header class="header">
-        My header
+        <i>For people who love fake news...</i>
         <div className="App">
           <Header />
           <Router>
