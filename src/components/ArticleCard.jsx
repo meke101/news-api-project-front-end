@@ -11,7 +11,7 @@ export default function ArticleCard({ article }) {
   console.log(formattedDate);
 
   return (
-    <div>
+    <div className="article-card">
       <Link to={`/articles/${article_id}`}>
         <p>
           <b>{title} </b> - <i> author:</i> {author} - <i> topic:</i> {topic} - <i> posted:</i> {formattedDate} :

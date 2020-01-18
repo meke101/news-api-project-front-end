@@ -18,8 +18,8 @@ export default class TopicSearchBar extends Component {
     }
     return (
       <div className="topic-search-bar-container">
-        <div className="topic-search-bar-row">
-          <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
+          <div className="topic-search-bar-row">
             <label>Enter a topic</label>
             <input
               id="topicInput"
@@ -30,8 +30,8 @@ export default class TopicSearchBar extends Component {
               }}
             ></input>
             <button>Search</button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

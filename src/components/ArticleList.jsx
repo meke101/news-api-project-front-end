@@ -24,16 +24,14 @@ export default class ArticleList extends Component {
           <h4>Article List</h4>
 
           <div class="article-cards-container">
-            <ul>
-              {this.state.articles.map(article => {
-                return (
-                    <div class="article-card">
-                      {" "}
-                      <ArticleCard key={article.article_id} article={article} />
-                  </div>
-                );
-              })}
-            </ul>
+            {this.state.articles.map(article => {
+              return (
+                // <div class="article-card">
+
+                <ArticleCard key={article.article_id} article={article} />
+                // </div>
+              );
+            })}
           </div>
         </div>
       </div>

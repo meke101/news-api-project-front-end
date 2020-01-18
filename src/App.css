@@ -9,48 +9,56 @@
 
 } */
 
+/* TOPIC SEARCH BAR */
+
+.topic-search-bar-row form {
+  padding-right: 10px;
+}
+
 .topic-search-bar-row {
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
   background-color: beige;
+  justify-content: space-between;
 }
 
 .topic-search-bar-row label {
-  padding-right: 10px;
-  flex:1
+  padding: 8px;
 }
 .topic-search-bar-row input {
-  flex: 1;
+  flex-grow: 1;
 }
-
-
-
-
-
-
-
-
-
 
 div {
   border: 1px solid #7381df;
   padding: 10px;
   border-style: inset;
 }
+/* to deal with small screen, shut off flex props */
+@media (min-width: 900px) {
+  .article-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
 
-/* .article-cards-container {
+.article-cards-container {
   max-width: 1400px;
   margin: 40px auto 0 auto;
   background-color: #c0dbe2;
-  display: flex;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .article-card {
   padding: 20px;
   margin-bottom: 20px;
-  flex: 2;
+  /* flex: 2; */
   background-color: rgb(230, 236, 238);
-} */
+  box-sizing: border-box;
+  flex-basis: 30%;
+}
 
 /* .comments {
   display: flex;
