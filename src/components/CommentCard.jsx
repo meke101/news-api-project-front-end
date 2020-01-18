@@ -3,20 +3,20 @@ import DeleteCommentButton from "./DeleteCommentButton";
 
 import VoteBar from "./VoteBar";
 
-export default function CommentCard({ comment, deleteComment, patchCommentVote }) {
+export default function CommentCard({ comment, deleteComment, currentUser }) {
   const { comment_id, body, author, votes } = comment;
-
   return (
     <div>
-      <h4>
-        comment Card - {body} - {author} -  {votes} 
-      </h4>
+      <h5>
+        {body} - {author} - {votes}
+      </h5>
       <DeleteCommentButton
         comment_id={comment_id}
+        author={author}
         deleteComment={deleteComment}
+        currentUser={currentUser}
       />
-      <VoteBar comment_id={comment_id}
-        votes={votes}/>
+      <VoteBar comment_id={comment_id} votes={votes} />
     </div>
   );
 }

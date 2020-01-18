@@ -10,7 +10,7 @@ export default class CommentList extends Component {
   };
 
   render() {
-    const { article_id } = this.props;
+    const { article_id, currentUser } = this.props;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
@@ -28,6 +28,7 @@ export default class CommentList extends Component {
                   comment={comment}
                   deleteComment={this.deleteComment}
                   patchCommentVote={this.patchCommentVote}
+                  currentUser={currentUser}
                 />
               </li>
             );
@@ -74,4 +75,3 @@ export default class CommentList extends Component {
       });
   }
 }
-
