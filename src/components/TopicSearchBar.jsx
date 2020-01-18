@@ -17,19 +17,21 @@ export default class TopicSearchBar extends Component {
       );
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Enter a topic</label>
-          <input
-            id="topicInput"
-            placeholder={"Enter topic..."}
-            value={this.state.topicSearch}
-            onChange={event => {
-              this.handleChange(event.target.value);
-            }}
-          ></input>
-          <button>Search</button>
-        </form>
+      <div className="topic-search-bar-container">
+        <div className="topic-search-bar-row">
+          <form onSubmit={this.handleSubmit}>
+            <label>Enter a topic</label>
+            <input
+              id="topicInput"
+              placeholder={"Enter topic..."}
+              value={this.state.topicSearch}
+              onChange={event => {
+                this.handleChange(event.target.value);
+              }}
+            ></input>
+            <button>Search</button>
+          </form>
+        </div>
       </div>
     );
   }

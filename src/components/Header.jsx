@@ -4,7 +4,7 @@ import UserBar from "./UserBar";
 
 export default function Header(props) {
   return (
-    <div>
+    <div class="header-container">
       <h2>News App</h2>
       <UserBar currentUser={props.currentUser} />
     </div>

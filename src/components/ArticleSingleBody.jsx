@@ -34,7 +34,7 @@ export default class ArticleSingleBody extends Component {
     const { title, body, topic, author, votes } = this.state.article;
 
     return (
-      <div className="singleArticleBox">
+      <article className="singleArticleBox">
         <Link to={`/articles/`}>
           <button>Home</button>
         </Link>
@@ -43,7 +43,7 @@ export default class ArticleSingleBody extends Component {
         <p> {body}</p>
         <p> {author}</p>
         <p> Votes: {votes}</p>
-      </div>
+      </article>
     );
   }
 

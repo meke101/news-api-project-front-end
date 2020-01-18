@@ -22,17 +22,19 @@ export default class ArticleList extends Component {
           <TopicSearchBar articleListRerender={this.articleListRerender} />
           <SortBar articleListRerender={this.articleListRerender} />
           <h4>Article List</h4>
-          <ul>
-            {this.state.articles.map(article => {
-              return (
-                <li key={article.article_id}>
-                  {" "}
-                  <ArticleCard key={article.article_id} article={article} />
-                  <hr />
-                </li>
-              );
-            })}
-          </ul>
+
+          <div class="article-cards-container">
+            <ul>
+              {this.state.articles.map(article => {
+                return (
+                    <div class="article-card">
+                      {" "}
+                      <ArticleCard key={article.article_id} article={article} />
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );

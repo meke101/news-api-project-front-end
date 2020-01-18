@@ -1,9 +1,36 @@
-body {
+/* body {
   margin: 40px;
   font-family: Gerorgia, Times, serif;
   background-color: #fff;
   color: #444;
+} */
+
+/* .topic-search-bar-container {
+
+} */
+
+.topic-search-bar-row {
+  padding: 10px 0;
+  display: flex;
+  background-color: beige;
 }
+
+.topic-search-bar-row label {
+  padding-right: 10px;
+  flex:1
+}
+.topic-search-bar-row input {
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+
 
 div {
   border: 1px solid #7381df;
@@ -11,8 +38,19 @@ div {
   border-style: inset;
 }
 
-button {
+/* .article-cards-container {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  background-color: #c0dbe2;
+  display: flex;
 }
+
+.article-card {
+  padding: 20px;
+  margin-bottom: 20px;
+  flex: 2;
+  background-color: rgb(230, 236, 238);
+} */
 
 /* .comments {
   display: flex;
