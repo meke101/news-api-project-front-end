@@ -4,6 +4,7 @@ import ArticleCard from "./ArticleCard";
 import TopicSearchBar from "./TopicSearchBar";
 import SortBar from "./SortBar";
 import ErrorPage from "./ErrorPage";
+import * as api from "../Api";
 
 export default class ArticleList extends Component {
   state = { articles: [], isLoading: true, err: null };
@@ -18,19 +19,19 @@ export default class ArticleList extends Component {
     }
     return (
       <div class="wrapper">
-          <TopicSearchBar displayNewArticles={this.displayNewArticles} />
-          <SortBar displayNewArticles={this.displayNewArticles} />
+        <TopicSearchBar displayNewArticles={this.displayNewArticles} />
+        <SortBar displayNewArticles={this.displayNewArticles} />
 
-          <div class="article-cards-container">
-            {this.state.articles.map(article => {
-              return (
-                // <div class="article-card">
+        <div class="article-cards-container">
+          {this.state.articles.map(article => {
+            return (
+              // <div class="article-card">
 
-                <ArticleCard key={article.article_id} article={article} />
-                // </div>
-              );
-            })}
-          </div>
+              <ArticleCard key={article.article_id} article={article} />
+              // </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -46,8 +47,8 @@ export default class ArticleList extends Component {
   }
 
   fetchArticles() {
-    return axios
-      .get("https://amelias-news-api.herokuapp.com/api/articles")
+    api
+      .getArticleList()
       .then(response =>
         this.setState({ articles: response.data.articles, isLoading: false })
       )

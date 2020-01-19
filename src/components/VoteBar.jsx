@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Like from "../Like.png";
 import Dislike from "../Dislike.png";
+import { updateCommentVote, updateArticleVote } from "../Api";
 
 export default class VoteBar extends Component {
   state = {
@@ -67,15 +68,9 @@ export default class VoteBar extends Component {
     const { comment_id, article_id } = this.props;
 
     if (comment_id) {
-      return axios.patch(
-        `https://amelias-news-api.herokuapp.com/api/comments/${comment_id}`,
-        newVote
-      );
-    } else if (article_id) {
-      return axios.patch(
-        `https://amelias-news-api.herokuapp.com/api/articles/${article_id}`,
-        newVote
-      );
+      updateCommentVote(comment_id, newVote);
+    } else {
+      updateArticleVote(article_id, newVote);
     }
   };
 }

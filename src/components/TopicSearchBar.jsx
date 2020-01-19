@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as api from "../Api";
 
 export default class TopicSearchBar extends Component {
   state = {
@@ -27,7 +27,7 @@ export default class TopicSearchBar extends Component {
             <button>Search</button>
           </div>
         </form>
-            <p> {this.state.errMessage}</p>
+        <p> {this.state.errMessage}</p>
       </div>
     );
   }
@@ -44,13 +44,13 @@ export default class TopicSearchBar extends Component {
 
   filterByTopic() {
     const { topicSearch } = this.state;
-
-    return axios
-      .get(`https://amelias-news-api.herokuapp.com/api/articles?`, {
-        params: {
-          topic: topicSearch
-        }
-      })
+    const search = {
+      params: {
+        topic: topicSearch
+      }
+    };
+    api
+      .filterArticles(search)
       .then(response => this.props.displayNewArticles(response.data.articles))
       .catch(err => {
         this.setState({

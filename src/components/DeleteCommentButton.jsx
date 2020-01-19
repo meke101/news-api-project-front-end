@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import * as api from "../Api";
 
 export default function DeleteCommentButton({
   comment_id,
@@ -7,13 +7,10 @@ export default function DeleteCommentButton({
   currentUser,
   author
 }) {
-
   const handleDeleteClick = event => {
-    if (currentUser === author ) {
-      return axios
-        .delete(
-          `https://amelias-news-api.herokuapp.com/api/comments/${comment_id}`
-        )
+    if (currentUser === author) {
+      api
+        .deleteCommentById(comment_id)
         .then(() => deleteComment(comment_id))
         .catch(err => {
           this.setState({

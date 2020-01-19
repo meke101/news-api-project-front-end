@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Router } from "@reach/router";
-import { Link } from "@reach/router";
 import ErrorPage from "./ErrorPage";
+import VoteBar from "./VoteBar";
+import * as api from "../Api";
 
 export default class ArticleSingleBody extends Component {
   state = {
@@ -35,14 +36,15 @@ export default class ArticleSingleBody extends Component {
 
     return (
       <article className="singleArticleBox">
-        <Link to={`/articles/`}>
-          <button>Home</button>
-        </Link>
-        <h3> {title}</h3>
-        <p> Topic: {topic}</p>
-        <p> {body}</p>
-        <p> {author}</p>
-        <p> Votes: {votes}</p>
+        <div class="singleArticleBox-column-left">
+          <h3> {title}</h3>
+          <p> Topic: {topic}</p>
+          <p> {body}</p>
+          <p> {author}</p>
+        </div>
+        <div class="singleArticleBox-column-right">
+          <VoteBar article_id={this.props.article_id} votes={votes} />
+        </div>
       </article>
     );
   }
@@ -53,8 +55,8 @@ export default class ArticleSingleBody extends Component {
 
   fetchArticle() {
     const { article_id } = this.props;
-    return axios
-      .get(`https://amelias-news-api.herokuapp.com/api/articles/${article_id} `)
+    api
+      .getArticlesById(article_id)
       .then(response =>
         this.setState({ article: response.data.article, isLoading: false })
       )

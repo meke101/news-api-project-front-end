@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as api from "../Api";
 
 export default class AddCommentBar extends Component {
   state = {
@@ -44,11 +44,8 @@ export default class AddCommentBar extends Component {
     const { article_id } = this.props;
     const newComment = { username: user, body: text };
     if (newComment.body.length > 0) {
-      return axios
-        .post(
-          `https://amelias-news-api.herokuapp.com/api/articles/${article_id}/comments`,
-          newComment
-        )
+      api
+        .addCommentByArticleId(article_id, newComment)
         .then(({ data }) => this.props.addComment(data));
     }
   }

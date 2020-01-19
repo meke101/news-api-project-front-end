@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as api from "../Api";
 import AddCommentBar from "./AddCommentBar";
 import CommentCard from "./CommentCard";
 
@@ -22,22 +22,21 @@ export default class CommentList extends Component {
           currentUser={currentUser}
         />
         <p>Comments list </p>
-        <ul>
-          {this.state.comments.map(comment => {
-            return (
-              <li key={comment.comment_id}>
-                {" "}
-                <CommentCard
-                  key={comment.comment_id}
-                  comment={comment}
-                  deleteComment={this.deleteComment}
-                  patchCommentVote={this.patchCommentVote}
-                  currentUser={currentUser}
-                />
-              </li>
-            );
-          })}
-        </ul>
+
+        {this.state.comments.map(comment => {
+          // console.log(comment.comment_id, "<<<<<<<<<<");
+          return (
+            <div class="comment-cards-container">
+              <CommentCard
+                key={comment.comment_id}
+                comment={comment}
+                deleteComment={this.deleteComment}
+                patchCommentVote={this.patchCommentVote}
+                currentUser={currentUser}
+              />
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -64,10 +63,9 @@ export default class CommentList extends Component {
 
   fetchComments() {
     const { article_id } = this.props;
-    return axios
-      .get(
-        `https://amelias-news-api.herokuapp.com/api/articles/${article_id}/comments`
-      )
+
+    api
+      .getArticleComments(article_id)
       .then(response =>
         this.setState({ comments: response.data.comments, isLoading: false })
       )
