@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Like from "../Like.png";
+import Dislike from "../Dislike.png";
 
 export default class VoteBar extends Component {
   state = {
-    clicked: false,
+    btnClicked: true,
     voteDifference: 0
   };
+
+  
 
   componentDidUpdate(prevProps, prevState) {
     if (!(this.props === prevProps)) {
@@ -15,41 +19,51 @@ export default class VoteBar extends Component {
 
   render() {
     const { votes } = this.props;
-    const { voteDifference, clicked } = this.state;
+    const { voteDifference, btnClicked } = this.state;
     return (
       <div>
-        <p>Likes: {votes + voteDifference} </p>
-        <button
-          disabled={clicked}
-          id="Like"
-          onClick={() => {
-            this.patchVote(1);
-          }}
-        >
-          Like
-        </button>
+        <div className="vote-options-container">
+          <p>Likes: {votes + voteDifference} </p>
+          <button
+            class="vote-button"
+            // disabled={btnClicked}
+            onClick={() => {
+              this.patchVote(btnClicked);
+            }}
+          >
+            <img alt="like-button" src={Like} width="30px" height="30px"></img>
+          </button>
 
-        <button
-          disabled={clicked}
-          id="Dislike"
-          onClick={() => {
-            this.patchVote(-1);
-          }}
-        >
-          Dislike
-        </button>
+          <button
+            // disabled={btnClicked}
+            onClick={() => {
+              this.patchVote(!btnClicked);
+            }}
+          >
+            <img
+              alt="Dislike button"
+              src={Dislike}
+              width="30px"
+              height="30px"
+            ></img>
+          </button>
+        </div>
       </div>
     );
   }
   patchVote = voteDirection => {
     const newVote = {
-      inc_votes: voteDirection
+      inc_votes: 0
     };
+
+    if (voteDirection === true) {
+      newVote.inc_votes = 1;
+    } else newVote.inc_votes = -1;
 
     this.setState(currentState => {
       return {
-        clicked: true,
-        voteDifference: currentState.voteDifference + voteDirection
+        btnClicked: !currentState.btnClicked,
+        voteDifference: currentState.voteDifference + newVote.inc_votes
       };
     });
 

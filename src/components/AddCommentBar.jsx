@@ -3,8 +3,7 @@ import axios from "axios";
 
 export default class AddCommentBar extends Component {
   state = {
-
-    user: "grumpy19",
+    user: this.props.currentUser,
     text: ""
   };
 
@@ -20,6 +19,7 @@ export default class AddCommentBar extends Component {
               onChange={event => {
                 this.handleChange(event.target.value);
               }}
+              required
             ></input>
             <button>Submit</button>
           </label>
@@ -30,7 +30,7 @@ export default class AddCommentBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-  
+
     this.addComment();
     this.setState({ text: "" });
   };

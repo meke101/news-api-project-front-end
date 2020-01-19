@@ -16,7 +16,11 @@ export default class CommentList extends Component {
     }
     return (
       <div className="comments">
-        <AddCommentBar article_id={article_id} addComment={this.addComment} />
+        <AddCommentBar
+          article_id={article_id}
+          addComment={this.addComment}
+          currentUser={currentUser}
+        />
         <p>Comments list </p>
         <ul>
           {this.state.comments.map(comment => {

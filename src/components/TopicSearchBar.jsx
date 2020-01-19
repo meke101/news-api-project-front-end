@@ -5,17 +5,11 @@ export default class TopicSearchBar extends Component {
   state = {
     topicSearch: "",
     isLoading: true,
-    err: null
+    err: null,
+    errMessage: ""
   };
 
   render() {
-    if (this.state.err !== null) {
-      return (
-        <div>
-          <p> Topic not found </p>
-        </div>
-      );
-    }
     return (
       <div className="topic-search-bar-container">
         <form onSubmit={this.handleSubmit}>
@@ -28,10 +22,12 @@ export default class TopicSearchBar extends Component {
               onChange={event => {
                 this.handleChange(event.target.value);
               }}
-            ></input>
+              required
+            />
             <button>Search</button>
           </div>
         </form>
+            <p> {this.state.errMessage}</p>
       </div>
     );
   }
@@ -55,11 +51,12 @@ export default class TopicSearchBar extends Component {
           topic: topicSearch
         }
       })
-      .then(response => this.props.articleListRerender(response.data.articles))
+      .then(response => this.props.displayNewArticles(response.data.articles))
       .catch(err => {
         this.setState({
           err: { status: err.response.status, msg: err.response.data.msg },
-          isLoading: false
+          isLoading: false,
+          errMessage: `No ${topicSearch} articles were found, sorry!`
         });
       });
   }

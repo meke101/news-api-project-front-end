@@ -1,3 +1,36 @@
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #3f4c5c;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+
 /* body {
   margin: 40px;
   font-family: Gerorgia, Times, serif;
@@ -5,11 +38,34 @@
   color: #444;
 } */
 
-/* .topic-search-bar-container {
+/* .colors {
 
+  color1: rgba(0, 21, 20, 1);
+  color2: rgba(107, 5, 4, 1);
+  color3: rgba(231, 236, 239, 1);
+  color4: rgba(163, 50, 11, 1);
+  color5: rgba(216, 164, 127, 1);
 } */
 
-/* TOPIC SEARCH BAR */
+.sort-button-container {
+  display: flx;
+}
+
+.topic-search-bar-container {
+  height: 70px;
+  background-color: rgba(0, 21, 20, 1);
+}
+
+.topic-search-bar-container p {
+  padding-right: 10px;
+  /* background-color: rgb(88, 88, 27); */
+  padding: 0px;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+  font-style: italic;
+  padding-left: 10px;
+  color: rgb(81, 152, 161);
+}
 
 .topic-search-bar-row form {
   padding-right: 10px;
@@ -43,22 +99,43 @@ div {
   }
 }
 
+img {
+  border-radius: 8px;
+}
+
 .article-cards-container {
   max-width: 1400px;
   margin: 40px auto 0 auto;
   background-color: #c0dbe2;
-  /* display: flex;
-  justify-content: space-between; */
 }
 
 .article-card {
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 20px;
-  /* flex: 2; */
-  background-color: rgb(230, 236, 238);
+  /* background-color: rgb(210, 26, 238); */
   box-sizing: border-box;
   flex-basis: 30%;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 25px;
+  background-image: linear-gradient(to bottom, rgb(236, 255, 255), rgb(255, 255, 255) 80%, green 20%);
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
 }
+
+.article-card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 25px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.vote-options-container {
+  display: flex;
+}
+
+/* .vote-button:hover {
+  background-color: rgb(178, 186, 214);
+} */
 
 /* .comments {
   display: flex;

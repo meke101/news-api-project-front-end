@@ -19,8 +19,8 @@ export default class ArticleList extends Component {
     return (
       <div class="wrapper">
         <div>
-          <TopicSearchBar articleListRerender={this.articleListRerender} />
-          <SortBar articleListRerender={this.articleListRerender} />
+          <TopicSearchBar displayNewArticles={this.displayNewArticles} />
+          <SortBar displayNewArticles={this.displayNewArticles} />
           <h4>Article List</h4>
 
           <div class="article-cards-container">
@@ -38,7 +38,7 @@ export default class ArticleList extends Component {
     );
   }
 
-  articleListRerender = articles => {
+  displayNewArticles = articles => {
     if (articles) {
       this.setState({ articles: articles });
     } else this.setState({ err: 404 });
