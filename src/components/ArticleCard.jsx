@@ -5,26 +5,32 @@ import moment from "moment";
 // import "moment-timezone";
 
 export default function ArticleCard({ article }) {
-  const { article_id, title, author, votes, topic, created_at, comment_count } = article;
+  const {
+    article_id,
+    title,
+    author,
+    votes,
+    topic,
+    created_at,
+    comment_count
+  } = article;
 
   const formattedDate = moment(created_at).format("MMM Do YYYY");
 
   return (
     <div className="article-card">
-      <Link to={`/articles/${article_id}`}>
-        <h5>
-          <b>{title} </b>
-        </h5>
-        <ul list-style-type="none">
-          <li>Coffee</li>
-          <li>Tea</li>
-          <li>Milk</li>
-        </ul>  
-        <p>
-          <i> author:</i> {author} - \<i> topic:</i> {topic} - <i> posted:</i>{" "}
-          {formattedDate} <i> Comment count: {comment_count}</i>:
-        </p>
-      </Link>
+      <div className="article-card-contents">
+        <Link to={`/articles/${article_id}`}>
+          <h4>{title}</h4>
+
+          <p>
+            <i> author: </i> {author} <br />
+            <i> topic: </i> {topic} <br />
+            <i> posted: </i> {formattedDate} <br />
+            <i> Comment count: </i> {comment_count}:
+          </p>
+        </Link>
+      </div>
       <VoteBar article_id={article_id} votes={votes} />
     </div>
   );
