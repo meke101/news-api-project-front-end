@@ -18,10 +18,8 @@ export default class ArticleList extends Component {
     }
     return (
       <div class="wrapper">
-        <div>
           <TopicSearchBar displayNewArticles={this.displayNewArticles} />
           <SortBar displayNewArticles={this.displayNewArticles} />
-          <h4>Article List</h4>
 
           <div class="article-cards-container">
             {this.state.articles.map(article => {
@@ -33,7 +31,6 @@ export default class ArticleList extends Component {
               );
             })}
           </div>
-        </div>
       </div>
     );
   }

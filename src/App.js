@@ -15,8 +15,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <header class="header">
-        <i>For people who love fake news...</i>
+      // <header class="header">
+        // <i>For people who love fake news...</i>
         <div className="App">
           <Header currentUser={this.state.currentUser} />
           <Router>
@@ -34,7 +34,7 @@ export default class App extends Component {
             <ErrorPage status={404} msg={"Page not found"} default />
           </Router>
         </div>
-      </header>
+      // </header>
     );
   }
 }

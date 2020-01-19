@@ -15,6 +15,11 @@ export default function ArticleCard({ article }) {
         <h5>
           <b>{title} </b>
         </h5>
+        <ul list-style-type="none">
+          <li>Coffee</li>
+          <li>Tea</li>
+          <li>Milk</li>
+        </ul>  
         <p>
           <i> author:</i> {author} - \<i> topic:</i> {topic} - <i> posted:</i>{" "}
           {formattedDate} <i> Comment count: {comment_count}</i>:

@@ -21,7 +21,6 @@ export default class VoteBar extends Component {
     const { votes } = this.props;
     const { voteDifference, btnClicked } = this.state;
     return (
-      <div>
         <div className="vote-options-container">
           <p>Likes: {votes + voteDifference} </p>
           <button
@@ -31,7 +30,7 @@ export default class VoteBar extends Component {
               this.patchVote(btnClicked);
             }}
           >
-            <img alt="like-button" src={Like} width="30px" height="30px"></img>
+            <img alt="like-button" src={Like} width="20px" height="20px" ></img>
           </button>
 
           <button
@@ -43,12 +42,11 @@ export default class VoteBar extends Component {
             <img
               alt="Dislike button"
               src={Dislike}
-              width="30px"
-              height="30px"
+              width="20px"
+              height="20px"
             ></img>
           </button>
         </div>
-      </div>
     );
   }
   patchVote = voteDirection => {

@@ -25,7 +25,7 @@ export default class SortBar extends Component {
   render() {
     return (
       <div class="sort-by-container">
-        <p>Sort By</p>
+        <h4> Articles </h4>
         <div className="sort-button-container">
           <button
             id="DateSort"

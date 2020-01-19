@@ -8,5 +8,9 @@ export default function Header(props) {
       <h2>News App</h2>
       <UserBar currentUser={props.currentUser} />
     </div>
+
+    
+
+    
   );
 }
