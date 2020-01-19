@@ -9,8 +9,6 @@ export default class VoteBar extends Component {
     voteDifference: 0
   };
 
-  
-
   componentDidUpdate(prevProps, prevState) {
     if (!(this.props === prevProps)) {
       this.setState({ voteDifference: 0 });
@@ -21,32 +19,33 @@ export default class VoteBar extends Component {
     const { votes } = this.props;
     const { voteDifference, btnClicked } = this.state;
     return (
-        <div className="vote-options-container">
-          <p>Likes: {votes + voteDifference} </p>
-          <button
-            class="vote-button"
-            // disabled={btnClicked}
-            onClick={() => {
-              this.patchVote(btnClicked);
-            }}
-          >
-            <img alt="like-button" src={Like} width="20px" height="20px" ></img>
-          </button>
+      <div className="vote-options-container">
+        <p>Likes: {votes + voteDifference} </p>
 
-          <button
-            // disabled={btnClicked}
-            onClick={() => {
-              this.patchVote(!btnClicked);
-            }}
-          >
-            <img
-              alt="Dislike button"
-              src={Dislike}
-              width="20px"
-              height="20px"
-            ></img>
-          </button>
-        </div>
+        <button
+          class="vote-button"
+          // disabled={btnClicked}
+          onClick={() => {
+            this.patchVote(btnClicked);
+          }}
+        >
+          <img alt="like-button" src={Like} width="20px" height="20px"></img>
+        </button>
+
+        <button
+          // disabled={btnClicked}
+          onClick={() => {
+            this.patchVote(!btnClicked);
+          }}
+        >
+          <img
+            alt="Dislike button"
+            src={Dislike}
+            width="20px"
+            height="20px"
+          ></img>
+        </button>
+      </div>
     );
   }
   patchVote = voteDirection => {

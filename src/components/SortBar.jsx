@@ -28,6 +28,7 @@ export default class SortBar extends Component {
         <h4> Articles </h4>
         <div className="sort-button-container">
           <button
+          focus
             id="DateSort"
             onClick={() => {
               this.setState({ sortBy: "created_at" });
