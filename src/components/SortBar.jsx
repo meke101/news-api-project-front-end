@@ -27,35 +27,37 @@ export default class SortBar extends Component {
   render() {
     return (
       <div class="sort-by-container">
-        <h4> Articles </h4>
+        <h2> Articles </h2>
         <div className="sort-button-container">
-          <button
-            focus
-            id="DateSort"
-            onClick={() => {
-              this.setState({ sortBy: "created_at" });
-            }}
-          >
-            Date
-          </button>
-
-          <button
-            id="CommentCountSort"
-            onClick={() => {
-              this.setState({ sortBy: "comment_count" });
-            }}
-          >
-            Comment Count
-          </button>
-
-          <button
-            id="VoteSort"
-            onClick={() => {
-              this.setState({ sortBy: "votes" });
-            }}
-          >
-            Vote
-          </button>
+          <label>
+            {" "}
+            Sort by:
+            <button
+              focus
+              id="DateSort"
+              onClick={() => {
+                this.setState({ sortBy: "created_at" });
+              }}
+            >
+              Date
+            </button>
+            <button
+              id="CommentCountSort"
+              onClick={() => {
+                this.setState({ sortBy: "comment_count" });
+              }}
+            >
+              Comment Count
+            </button>
+            <button
+              id="VoteSort"
+              onClick={() => {
+                this.setState({ sortBy: "votes" });
+              }}
+            >
+              Vote
+            </button>
+          </label>
         </div>
       </div>
     );

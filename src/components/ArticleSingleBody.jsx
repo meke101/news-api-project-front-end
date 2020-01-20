@@ -13,7 +13,6 @@ export default class ArticleSingleBody extends Component {
   };
 
   render() {
-    console.log(this.state.err, "EEEERRRRR");
     if (this.state.err !== null) {
       return (
         <div>
@@ -38,12 +37,13 @@ export default class ArticleSingleBody extends Component {
       <article className="singleArticleBox">
         <div class="singleArticleBox-column-left">
           <h3> {title}</h3>
-          <p> Topic: {topic}</p>
+          <p>
+            <i>Topic: </i> {topic} , <i>Author: </i> {author}
+          </p>
           <p> {body}</p>
-          <p> {author}</p>
-        </div>
-        <div class="singleArticleBox-column-right">
-          <VoteBar article_id={this.props.article_id} votes={votes} />
+          <div class="singleArticleBox-column-right">
+            <VoteBar article_id={this.props.article_id} votes={votes} />
+          </div>
         </div>
       </article>
     );

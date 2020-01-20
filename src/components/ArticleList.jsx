@@ -19,6 +19,7 @@ export default class ArticleList extends Component {
     }
     return (
       <div class="wrapper">
+        {/* <h2 id="ArticlesTitle">Welcome to our splendid list of articles!</h2> */}
         <TopicSearchBar displayNewArticles={this.displayNewArticles} />
         <SortBar displayNewArticles={this.displayNewArticles} />
 

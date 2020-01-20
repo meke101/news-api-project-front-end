@@ -24,9 +24,9 @@ export default function ArticleCard({ article }) {
           <h4>{title}</h4>
 
           <p>
-            <i> author: </i> {author} <br />
-            <i> topic: </i> {topic} <br />
-            <i> posted: </i> {formattedDate} <br />
+            <i> Author: </i> {author} <br />
+            <i> Topic: </i> {topic} <br />
+            <i> Posted: </i> {formattedDate} <br />
             <i> Comment count: </i> {comment_count}:
           </p>
         </Link>

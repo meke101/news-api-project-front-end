@@ -15,7 +15,7 @@ export default class CommentList extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <div className="comments">
+      <div className="comments-container">
         <AddCommentBar
           article_id={article_id}
           addComment={this.addComment}

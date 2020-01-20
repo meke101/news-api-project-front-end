@@ -9,7 +9,7 @@ export default class UserBar extends Component {
   render() {
     const { isLoading } = this.state;
     if (isLoading) return <p>Loading...</p>;
-    return <div>Logged in as: {this.props.currentUser}</div>;
+    return <p>Logged in as: {this.props.currentUser}  </p>;
   }
 
   componentDidMount() {

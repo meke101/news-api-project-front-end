@@ -34,6 +34,7 @@ export default class VoteBar extends Component {
         </button>
 
         <button
+        
           // disabled={btnClicked}
           onClick={() => {
             this.patchVote(!btnClicked);

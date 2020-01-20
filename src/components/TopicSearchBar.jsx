@@ -8,10 +8,10 @@ export default class TopicSearchBar extends Component {
     err: null,
     errMessage: ""
   };
-
   render() {
     return (
       <div className="topic-search-bar-container">
+          <h1 className="Articles-title">Welcome to our splendid list of articles!</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="topic-search-bar-row">
             <label>Enter a topic</label>
@@ -56,7 +56,7 @@ export default class TopicSearchBar extends Component {
         this.setState({
           err: { status: err.response.status, msg: err.response.data.msg },
           isLoading: false,
-          errMessage: `No ${topicSearch} articles were found, sorry!`
+          errMessage: `No articles were found for "${topicSearch}", sorry!`
         });
       });
   }
