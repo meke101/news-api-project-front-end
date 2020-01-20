@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import TopicSearchBar from "./TopicSearchBar";
 import SortBar from "./SortBar";

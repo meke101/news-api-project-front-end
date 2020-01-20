@@ -9,7 +9,11 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
     <div class="comment-card-container">
       <div class="comment-card-body">
         <h5>
-          {body} - {author} - {votes}
+          <i>
+            {" "}
+            {author} 
+          </i>{" "}
+          - {body}
         </h5>
       </div>
       <div class="comment-card-right-column">

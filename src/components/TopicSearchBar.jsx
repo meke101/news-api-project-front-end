@@ -11,7 +11,15 @@ export default class TopicSearchBar extends Component {
   render() {
     return (
       <div className="topic-search-bar-container">
-          <h1 className="Articles-title">Welcome to our splendid list of articles!</h1>
+      <link
+        href="https://fonts.googleapis.com/css?family=Trochut:400,700&display=swap"
+        rel="stylesheet"
+      ></link>
+
+      
+        <h1 className="articles-title">
+          Welcome to our splendid list of articles!
+        </h1>
         <form onSubmit={this.handleSubmit}>
           <div className="topic-search-bar-row">
             <label>Enter a topic</label>

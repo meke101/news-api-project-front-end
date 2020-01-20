@@ -14,7 +14,8 @@ export default function DeleteCommentButton({
         .then(() => deleteComment(comment_id))
         .catch(err => {
           this.setState({
-            err: { status: err.response.status, msg: err.response.data.msg }
+            err: { status: err.response.status, msg: err.response.data.msg },
+            errMessage: `${currentUser}, you cannot delete ${author}'s comments!`
           });
         });
     }
@@ -23,6 +24,7 @@ export default function DeleteCommentButton({
   return (
     <div>
       <button onClick={handleDeleteClick}>Delete</button>
+      {/* <p> {this.state.errMessage}</p> */}
     </div>
   );
 }

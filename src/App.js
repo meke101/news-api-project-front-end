@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import ArticleSinglePage from "./components/ArticleSinglePage";
 import ErrorPage from "./components/ErrorPage";
 
+
 export default class App extends Component {
   state = {
     error: null,

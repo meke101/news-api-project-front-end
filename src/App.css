@@ -1,13 +1,33 @@
-/* div {
-  border: 1px solid #7381df;
+.topic-search-bar-row {
   padding: 10px;
-} */
+  /* display: flex;
+  justify-content: flex-end; */
+  /* flex-direction: column; */
 
-/* $color1: rgba(230, 57, 70, 1);
-$color2: rgba(241, 250, 238, 1);
-$color3: rgba(168, 218, 220, 1);
-$color4: rgba(69, 123, 157, 1);
-$color5: rgba(29, 53, 87, 1);  */
+  /* background-color: beige; */
+}
+@media (max-width: 700px) {
+  .topic-search-bar-row {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    /* background-color: beige; */
+  }
+
+  .sort-by-container {
+    flex-direction: column;
+  }
+  .sort-button-container {
+    /* background-color: rgb(53, 158, 18); */
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+  .singleArticleBox-column-left {
+    padding-top: 200px;
+  }
+}
 
 .root {
   margin: 0;
@@ -15,19 +35,23 @@ $color5: rgba(29, 53, 87, 1);  */
 }
 .App {
   margin: 0;
-  background: rgb(168, 194, 211);
-  background-image: url("./news3.png");
+  background: rgba(205, 207, 207, 0.782);
+  /* background-image: url("./news3.png"); */
   background-size: contain;
-  /* flex: 1; */
-  /* flex-direction: "row"; */
-  /* justify-content: "center"; */
-  /* align-items: "stretch"; */
-  /* padding: 0; */
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  /* font-family: Arial Narrow, sans-serif; */
+
+  /* font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; */
+  font-family: Arial Narrow, sans-serif;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+  .topic-search-bar-row {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    /* flex-direction: column; */
+
+    /* background-color: beige; */
+  }
   .vote-options-container {
     display: flex;
 
@@ -36,8 +60,13 @@ $color5: rgba(29, 53, 87, 1);  */
 }
 
 .articles-title {
-  background-color: rgb(168, 194, 211);
+  font-size: 5vw;
+  color:  rgba(49, 49, 51, 0.946);
+  font-family: "Trochut", cursive;
+  /* background-color: rgb(146, 171, 187); */
+  /* mark: rgb(65, 78, 87); */
 }
+/* font-size: 2.5em;  */
 
 .vote-options-container p {
   padding-right: 10px;
@@ -67,7 +96,8 @@ $color5: rgba(29, 53, 87, 1);  */
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  background-color: rgba(230, 57, 71, 0.599);
+  /* background-color: rgba(230, 57, 71, 0.599); */
+  background-color: rgba(157, 155, 206, 0.599);
 }
 
 .homepage-container {
@@ -82,8 +112,14 @@ $color5: rgba(29, 53, 87, 1);  */
   background-color: ;
 }
 
+.sort-button-container {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .sort-by-container {
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -92,6 +128,7 @@ $color5: rgba(29, 53, 87, 1);  */
 
 button {
   border-radius: 15%;
+  font-family: Arial Narrow, sans-serif;
   /* display: inline-block; */
   /* border: none; */
   /* padding: 1rem 2rem; */
@@ -111,10 +148,17 @@ button:onclick {
   background: rgba(29, 53, 87, 1);
 }
 
-button:hover,
-button:focus {
+button:hover {
   background: rgba(29, 53, 87, 1);
 }
+
+button:disabled {
+  background: rgb(2, 12, 27);
+}
+
+/* button:focus {
+  background: rgb(42, 92, 38);
+} */
 
 /*
 /* button:focus {
@@ -157,13 +201,6 @@ $color5: rgba(29, 53, 87, 1); */
   padding-right: 10px;
 }
 
-.topic-search-bar-row {
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  /* background-color: beige; */
-}
-
 .topic-search-bar-row label {
   padding: 8px;
 }
@@ -184,6 +221,14 @@ $color5: rgba(29, 53, 87, 1); */
   }
 }
 
+*/ .App label {
+  font-size: 80%;
+}
+
+.article-cards-container {
+  /* background-color: rgb(53, 158, 18); */
+}
+
 img {
   border-radius: 8px;
 }
@@ -196,6 +241,8 @@ img {
 }
 .comment-card-container {
   display: flex;
+  border-top: 5px solid rgba(157, 155, 206, 0.599);
+  /* border-color: rgb(155, 95, 16); */
   /* flex-direction: column; */
   background-color: rgba(241, 250, 238, 1);
 }
@@ -245,7 +292,7 @@ img {
     to bottom,
     rgba(241, 250, 238, 1),
     rgba(241, 250, 238, 1) 82%,
-    rgba(230, 57, 71, 0.789) 18%
+    #c1b7d1c9 18%
   );
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
@@ -280,7 +327,7 @@ img {
     to bottom,
     rgba(241, 250, 238, 1),
     rgba(241, 250, 238, 1) 86%,
-    rgba(230, 57, 71, 0.789) 14%
+    /* rgba(230, 57, 71, 0.789) 14% */
   );
   /* background-attachment: fixed; */
   background-repeat: no-repeat;

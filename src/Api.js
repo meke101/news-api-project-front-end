@@ -58,3 +58,5 @@ export const updateArticleVote = (article_id, newVote) => {
     newVote
   );
 };
+
+

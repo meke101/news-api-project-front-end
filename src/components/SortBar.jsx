@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
 import * as api from "../Api";
 
 export default class SortBar extends Component {
   state = {
-    sortBy: ""
+    sortBy: "",
   };
 
   sortArticles = sortBy => {
@@ -28,8 +27,8 @@ export default class SortBar extends Component {
     return (
       <div class="sort-by-container">
         <h2> Articles </h2>
-        <div className="sort-button-container">
-          <label>
+        
+          <label className="sort-button-container">
             {" "}
             Sort by:
             <button
@@ -58,7 +57,7 @@ export default class SortBar extends Component {
               Vote
             </button>
           </label>
-        </div>
+        
       </div>
     );
   }
