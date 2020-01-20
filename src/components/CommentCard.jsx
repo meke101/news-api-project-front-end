@@ -9,26 +9,22 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
     <div class="comment-card-container">
       <div class="comment-card-body">
         <h5>
-          <i>
-            {" "}
-            {author} 
-          </i>{" "}
-          - {body}
+          <i> {author}</i> - {body}
         </h5>
       </div>
-      <div class="comment-card-right-column">
+      {/* <div class="comment-card-right-column"> */}
         <div class="-comment-card-voteBar">
           <VoteBar comment_id={comment_id} votes={votes} />
+          <div class="comment-card-delete">
+            <DeleteCommentButton
+              comment_id={comment_id}
+              author={author}
+              deleteComment={deleteComment}
+              currentUser={currentUser}
+            />
+          </div>
         </div>
-        <div class="comment-card-delete">
-          <DeleteCommentButton
-            comment_id={comment_id}
-            author={author}
-            deleteComment={deleteComment}
-            currentUser={currentUser}
-          />
-        </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

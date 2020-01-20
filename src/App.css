@@ -61,8 +61,8 @@
 
 .articles-title {
   font-size: 5vw;
-  color:  rgba(49, 49, 51, 0.946);
-  font-family: "Trochut", cursive;
+  color: rgba(49, 49, 51, 0.946);
+  /* font-family: 'Ultra', serif; */
   /* background-color: rgb(146, 171, 187); */
   /* mark: rgb(65, 78, 87); */
 }
@@ -237,25 +237,30 @@ img {
   background-color: rgba(241, 250, 238, 1);
   padding: 20px;
   padding-right: 80px;
+  display: flex;
+  flex-direction: column;
   padding-left: 80px;
 }
 .comment-card-container {
-  display: flex;
   border-top: 5px solid rgba(157, 155, 206, 0.599);
   /* border-color: rgb(155, 95, 16); */
   /* flex-direction: column; */
   background-color: rgba(241, 250, 238, 1);
+  justify-content: space-evenly;
 }
 
 .comment-card-body {
   flex: 2;
+  display: flex;
 }
 
 .comment-card-delete {
-  flex: 1;
+  /* flex: 3; */
 }
 
 .comment-card-voteBar {
+  /* display: flex; */
+  /* justify-content: flex-end; */
   flex: 1;
   background-color: #1b181a;
 }
@@ -291,8 +296,8 @@ img {
   background-image: linear-gradient(
     to bottom,
     rgba(241, 250, 238, 1),
-    rgba(241, 250, 238, 1) 82%,
-    #c1b7d1c9 18%
+    rgba(241, 250, 238, 1) 81%,
+    #c1b7d1c9 19%
   );
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
