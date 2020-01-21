@@ -8,13 +8,14 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
   return (
     <div class="comment-card-container">
       <div class="comment-card-body">
+          <VoteBar comment_id={comment_id} votes={votes} />
         <h5>
           <i> {author}</i> - {body}
         </h5>
       </div>
       {/* <div class="comment-card-right-column"> */}
         <div class="-comment-card-voteBar">
-          <VoteBar comment_id={comment_id} votes={votes} />
+            </div>
           <div class="comment-card-delete">
             <DeleteCommentButton
               comment_id={comment_id}
@@ -23,7 +24,6 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
               currentUser={currentUser}
             />
           </div>
-        </div>
       {/* </div> */}
     </div>
   );
