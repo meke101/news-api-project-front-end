@@ -19,11 +19,13 @@ export default function ArticleCard({ article }) {
 
   return (
     <div className="article-card">
+      <div className={`article-card-${topic}`} >
+      {/* <card> */}
+
       <div className="article-card-contents">
         <Link to={`/articles/${article_id}`}>
           <h4>{title}</h4>
           <p>
-
             <i> Author: </i> {author} <br />
             <i> Topic: </i> {topic} <br />
             <i> Posted: </i> {formattedDate} <br />
@@ -31,7 +33,9 @@ export default function ArticleCard({ article }) {
           </p>
         </Link>
         <VoteBar article_id={article_id} votes={votes} />
+      {/* </card> */}
       </div>
     </div>
+      </div>
   );
 }

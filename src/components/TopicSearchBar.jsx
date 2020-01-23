@@ -11,12 +11,11 @@ export default class TopicSearchBar extends Component {
   render() {
     return (
       <div className="topic-search-bar-container">
-      <link
-        href="https://fonts.googleapis.com/css?family=Trochut:400,700&display=swap"
-        rel="stylesheet"
-      ></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Trochut:400,700&display=swap"
+          rel="stylesheet"
+        ></link>
 
-      
         <h1 className="articles-title">
           Welcome to our splendid list of articles!
         </h1>
@@ -59,7 +58,10 @@ export default class TopicSearchBar extends Component {
     };
     api
       .filterArticles(search)
-      .then(response => this.props.displayNewArticles(response.data.articles))
+      .then(response => {
+        this.setState({ errMessage: "" });
+        this.props.displayNewArticles(response.data.articles);
+      })
       .catch(err => {
         this.setState({
           err: { status: err.response.status, msg: err.response.data.msg },
