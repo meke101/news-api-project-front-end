@@ -18,24 +18,27 @@ export default function ArticleCard({ article }) {
   const formattedDate = moment(created_at).format("MMM Do YYYY");
 
   return (
-    <div className="article-card">
-      <div className={`article-card-${topic}`} >
+    // <div className={`article-card  `}>
+    <div className={`article-card-${topic} article-card`}>
       {/* <card> */}
 
-      <div className="article-card-contents">
+      <div className={`article-card-contents article-card-contents-${topic}`}>
         <Link to={`/articles/${article_id}`}>
-          <h4>{title}</h4>
+          <h3>
+            <b>{title}</b>
+          </h3>
           <p>
-            <i> Author: </i> {author} <br />
-            <i> Topic: </i> {topic} <br />
-            <i> Posted: </i> {formattedDate} <br />
-            <i> Comment count: </i> {comment_count}:
+            <b> Author: </b> <i> {author} </i>
+            <br />
+            <b> Topic: </b> <i>{topic} </i> <br />
+            <b> Posted: </b> <i> {formattedDate} </i> <br />
+            <b> Comment count: </b> <i>{comment_count}:</i>
           </p>
         </Link>
-        <VoteBar article_id={article_id} votes={votes} />
-      {/* </card> */}
+        {/* </card> */}
       </div>
+      <VoteBar article_id={article_id} votes={votes} />
+      {/* </div> */}
     </div>
-      </div>
   );
 }

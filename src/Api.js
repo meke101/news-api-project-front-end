@@ -38,10 +38,10 @@ export const sortArticles = sort => {
   );
 };
 
-export const filterArticles = search => {
+export const filterArticles = params => {
   return axios.get(
     `https://amelias-news-api.herokuapp.com/api/articles?`,
-    search
+    params
   );
 };
 

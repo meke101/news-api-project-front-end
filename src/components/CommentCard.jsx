@@ -10,7 +10,7 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
       <div class="comment-card-body">
           <VoteBar comment_id={comment_id} votes={votes} />
         <h5>
-          <i> {author}</i> - {body}
+          <b> {author}</b> - <i>  {body} </i>
         </h5>
       </div>
       {/* <div class="comment-card-right-column"> */}

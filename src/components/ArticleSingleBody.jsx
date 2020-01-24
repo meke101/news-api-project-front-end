@@ -4,6 +4,7 @@ import { Router } from "@reach/router";
 import ErrorPage from "./ErrorPage";
 import VoteBar from "./VoteBar";
 import * as api from "../Api";
+import CommentList from "./CommentList";
 
 export default class ArticleSingleBody extends Component {
   state = {
@@ -16,13 +17,13 @@ export default class ArticleSingleBody extends Component {
     if (this.state.err !== null) {
       return (
         <div>
-          <Router>
-            <ErrorPage
-              default
-              status={this.state.err.status}
-              msg={this.state.err.msg}
-            />
-          </Router>
+          {/* <Router> */}
+          <ErrorPage
+            default
+            status={this.state.err.status}
+            msg={this.state.err.msg}
+          />
+          {/* </Router> */}
         </div>
       );
     }
@@ -36,16 +37,22 @@ export default class ArticleSingleBody extends Component {
     return (
       <article className="singleArticleBox">
         <div class="singleArticleBox-column-left">
+          <div class="singleArticleBox-top">
           <h3> {title}</h3>
           <p>
-            <i>Topic: </i> {topic} , <i>Author: </i> {author}
+            <b>Topic: </b> <i> {topic} </i>, <b>Author: </b> <i> {author} </i>
           </p>
           <p> {body}</p>
-          <div class="singleArticleBox-column-right">
-            <VoteBar article_id={this.props.article_id} votes={votes} />
+          <VoteBar article_id={this.props.article_id} votes={votes} />
           </div>
+          <CommentList
+            article_id={this.props.article_id}
+            currentUser={this.props.currentUser}
+          />
         </div>
       </article>
+      // <div></div>
+      // <CommentList article_id={article_id} currentUser={currentUser} />
     );
   }
 

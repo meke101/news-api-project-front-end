@@ -7,15 +7,15 @@ import * as api from "../Api";
 
 export default class ArticleList extends Component {
   state = { articles: [], isLoading: true, err: null };
+  // const { err } = this.state;
+  if(err) {
+    return <ErrorPage {...this.state.err} />;
+  }
   render() {
-    const { err } = this.state;
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
 
-    if (err) {
-      return <ErrorPage {...err} />;
-    }
     return (
       <div class="wrapper">
         {/* <h2 id="ArticlesTitle">Welcome to our splendid list of articles!</h2> */}
