@@ -26,7 +26,7 @@ export default class SortBar extends Component {
   render() {
     return (
       <div class="sort-by-container">
-        <h2> Articles </h2>
+        <h2> Articles: </h2>
         
           <label className="sort-button-container">
             {" "}

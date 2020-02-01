@@ -1,13 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
 import * as api from "../Api";
 
-export default function DeleteCommentButton({
-  comment_id,
-  deleteComment,
-  currentUser,
-  author
-}) {
-  const handleDeleteClick = event => {
+export default class DeleteCommentButton extends Component {
+  state = {
+    deleteBtnActive: false
+  };
+
+  render() {
+    const { deleteBtnActive } = this.state;
+    return (
+      <div>
+        <button onClick={this.handleDeleteClick} disabled={!deleteBtnActive}>
+          Delete
+        </button>
+      </div>
+    );
+  }
+
+  componentDidMount() {
+    const { currentUser, author } = this.props;
+    if (currentUser === author) {
+      console.log("USER DELETEBERE");
+      this.setState({ deleteBtnActive: true });
+    }
+  }
+
+  handleDeleteClick = event => {
+    const { comment_id, deleteComment, currentUser, author } = this.props;
     if (currentUser === author) {
       api
         .deleteCommentById(comment_id)
@@ -20,11 +39,4 @@ export default function DeleteCommentButton({
         });
     }
   };
-
-  return (
-    <div>
-      <button onClick={handleDeleteClick}>Delete</button>
-      {/* <p> {this.state.errMessage}</p> */}
-    </div>
-  );
 }

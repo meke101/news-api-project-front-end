@@ -16,9 +16,7 @@ export default class TopicSearchBar extends Component {
           rel="stylesheet"
         ></link>
 
-        <h1 className="articles-title">
-          Welcome to our splendid list of articles!
-        </h1>
+        <h1 className="articles-title">News, news, read all about it...</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="topic-search-bar-row">
             <label>Enter a topic</label>

@@ -3,7 +3,6 @@ import * as api from "../Api";
 
 export default class AddCommentBar extends Component {
   state = {
-    // user: this.props.currentUser,
     text: ""
   };
 
@@ -42,7 +41,6 @@ export default class AddCommentBar extends Component {
   addComment() {
     const { text } = this.state;
     const { article_id, currentUser } = this.props;
-    console.log(currentUser, "UUZZEER");
     const newComment = { username: currentUser, body: text };
     if (newComment.body.length > 0) {
       api

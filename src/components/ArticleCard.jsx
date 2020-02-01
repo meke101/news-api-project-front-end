@@ -18,10 +18,7 @@ export default function ArticleCard({ article }) {
   const formattedDate = moment(created_at).format("MMM Do YYYY");
 
   return (
-    // <div className={`article-card  `}>
     <div className={`article-card-${topic} article-card`}>
-      {/* <card> */}
-
       <div className={`article-card-contents article-card-contents-${topic}`}>
         <Link to={`/articles/${article_id}`}>
           <h3>
@@ -35,10 +32,8 @@ export default function ArticleCard({ article }) {
             <b> Comment count: </b> <i>{comment_count}:</i>
           </p>
         </Link>
-        {/* </card> */}
       </div>
       <VoteBar article_id={article_id} votes={votes} />
-      {/* </div> */}
     </div>
   );
 }

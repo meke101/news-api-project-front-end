@@ -24,7 +24,6 @@ export default class CommentList extends Component {
         <p>Comments list </p>
 
         {this.state.comments.map(comment => {
-          // console.log(comment.comment_id, "<<<<<<<<<<");
           return (
             <div class="comment-cards-container">
               <CommentCard

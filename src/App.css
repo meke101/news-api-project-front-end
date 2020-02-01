@@ -1,39 +1,9 @@
-$color1: rgba(86, 65, 56, 1);
-$color2: rgba(255, 66, 66, 1);
-$color3: rgba(46, 134, 171, 1);
-$color4: rgba(246, 245, 174, 1);
-$color5: rgba(245, 247, 73, 1);
-
-$color1: rgba(240, 182, 127, 1);
-$color2: rgba(255, 66, 66, 1);
-$color3: rgba(46, 134, 171, 1);
-$color4: rgba(246, 245, 174, 1);
-$color5: rgba(49, 8, 31, 1);
-
-$color1: rgba(255, 166, 48, 1);
-$color2: rgba(215, 232, 186, 1);
-$color3: rgba(46, 134, 171, 1);
-$color4: rgba(246, 245, 174, 1);
-$color5: rgba(49, 8, 31, 1);
-
-.topic-search-bar-row {
-  /* padding: 10px;
-  
-  */
-  /* display: flex;
-  justify-content: flex-end; */
-  /* flex-direction: column; */
-
-  /* background-color: beige; */
-}
 @media (max-width: 700px) {
   .topic-search-bar-row {
     padding: 10px;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-
-    /* background-color: beige; */
   }
 
   button Datesort {
@@ -44,25 +14,21 @@ $color5: rgba(49, 8, 31, 1);
     flex-direction: column;
   }
 
-  .sort-button-container button {
-    /* background-color: rgb(53, 158, 18); */
-    /* display: flex; */
-    /* flex-direction: column; */
-  }
   .singleArticleBox-column-left {
     padding-top: 200px;
+    font-size: 3vw;
+    margin: auto;
+  }
+
+  .header-container {
+    font-size: 3vw;
   }
 
   .comments-container {
     background-color: rgba(241, 250, 238, 1);
     padding: 10px;
-    /* padding-right: 10px; */
     display: flex;
-
-    /* background-color: rgb(28, 62, 83); */
-
     flex-direction: column;
-    /* padding-left: 80px; */
   }
 }
 
@@ -72,30 +38,20 @@ $color5: rgba(49, 8, 31, 1);
 }
 .App {
   margin: 5px;
-  /* background: rgba(240, 182, 127, 1); */
-  /* background-image: url("./globe.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
 
-  /* font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; */
-  /* font-family: Arial Narrow, sans-serif;
-   */
-  font-family: "Open Sans", sans-serif;
+  font-family: Arial Narrow, sans-serif;
 }
 
 @media (min-width: 700px) {
   .topic-search-bar-row {
-    /* padding: 10px; */
     display: flex;
     justify-content: flex-beginning;
-    /* flex-direction: column; */
-
-    /* background-color: beige; */
   }
   .vote-options-container {
     display: flex;
-    /* margin: 10px; */
     flex-direction: row;
   }
 
@@ -104,7 +60,6 @@ $color5: rgba(49, 8, 31, 1);
     padding: 20px;
     padding-right: 80px;
     display: flex;
-    /* background-color: rgb(28, 62, 83); */
 
     flex-direction: column;
     padding-left: 80px;
@@ -112,17 +67,11 @@ $color5: rgba(49, 8, 31, 1);
 }
 
 .articles-title {
-  /* font-size: 5vw; */
   color: rgba(49, 8, 31, 1);
-  /* font-family: 'Ultra', serif; */
-  /* background-color: rgb(146, 171, 187); */
-  /* mark: rgb(65, 78, 87); */
 }
-/* font-size: 2.5em;  */
 
 .vote-options-container p {
   padding-right: 10px;
-  /* background-color: rgb(88, 88, 27); */
   padding: 0px;
   margin-top: 0.2em;
   margin-bottom: 0em;
@@ -131,8 +80,6 @@ $color5: rgba(49, 8, 31, 1);
 }
 
 .vote-options-container {
-  /* display: flex; */
-  /* flex-direction: column; */
   max-height: 30px;
   justify-content: flex-end;
   margin: 0;
@@ -148,17 +95,13 @@ $color5: rgba(49, 8, 31, 1);
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  background-color: rgba(229, 89, 52, 1);
-  /* background-color: rgba(230, 57, 71, 0.599);
-   */
-  /* background-color: rgba(46, 134, 171, 0.558); */
+  background-color: rgba(229, 90, 52, 0.815);
 }
 .header-container button {
   height: 40px;
   width: 80px;
   margin-top: 15px;
   margin-left: 10px;
-  /* background-color: red; */
 }
 
 .logged-in-bar {
@@ -191,7 +134,6 @@ $color5: rgba(49, 8, 31, 1);
 
 .sort-by-container {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -202,25 +144,9 @@ button {
   border-radius: 1%;
   color: rgba(46, 134, 171, 1);
   font-family: Arial Narrow, sans-serif;
-  /* padding-top: 2px; */
-  /* display: inline-block; */
-  /* border: none; */
-  /* padding: 1rem 2rem; */
-  /* text-decoration: none; */
-  /* background: #fbf2c0; */
-  /* background: rgba(246, 245, 174, 1); */
-  /* color: #ffffff; */
-  /* font-family: sans-serif; */
+
   font-size: 1rem;
   cursor: pointer;
-  /* text-align: center; */
-  /* transition: background 250ms ease-in-out, transform 150ms ease; */
-  /* -webkit-appearance: none; */
-  /* -moz-appearance: none; */
-}
-
-button:onclick {
-  /* background: rgba(29, 53, 87, 1); */
 }
 
 button:hover {
@@ -228,49 +154,8 @@ button:hover {
 }
 
 button:disabled {
-  background: rgba(223, 198, 198, 0.558);
+  background: rgba(126, 119, 119, 0.603);
 }
-
-/* button:focus {
-  background: rgb(42, 92, 38);
-} */
-
-/*
-/* button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-} */
-/* 
-button:active {
-   background: #381749;
-  transform: scale(0.99);
-} */
-
-/* body {
-  margin: 40px;
-  font-family: Gerorgia, Times, serif;
-  background-color: #fff;
-  color: #444;
-} */
-/* 
-$color1: rgba(230, 57, 70, 1);
-$color2: rgba(241, 250, 238, 1);
-$color3: rgba(168, 218, 220, 1);
-$color4: rgba(69, 123, 157, 1);
-$color5: rgba(29, 53, 87, 1); */
-
-/* background-color: rgba(0, 21, 20, 1); */
-
-/* .topic-search-bar-container p {
-  padding-right: 10px;
-  background-color: rgb(88, 88, 27);
-  padding: 0px;
-  margin-top: 0.2em;
-  margin-bottom: 0em;
-  font-style: italic;
-  padding-left: 10px;
-  color: rgb(81, 152, 161);
-} */
 
 .topic-search-bar-row form {
   margin-right: 10px;
@@ -278,9 +163,6 @@ $color5: rgba(29, 53, 87, 1); */
 
 .topic-search-bar-row label {
   padding: 8px;
-}
-.topic-search-bar-row input {
-  /* flex-grow: 1; */
 }
 
 :any-link {
@@ -302,95 +184,53 @@ $color5: rgba(29, 53, 87, 1); */
   font-size: 80%;
 }
 
-.article-cards-container {
-  /* background-color: rgb(53, 158, 18); */
-}
-
 .vote-options-container button {
-  /* display: flex; */
   margin-right: 2px;
   margin-top: 3px;
   margin-left: 4px;
-  /* flex-direction: row; */
 }
 img {
   border-radius: 8px;
 }
 
-/* .comments-container {
-  background-color: rgba(241, 250, 238, 1);
-  padding: 20px;
-  padding-right: 80px;
-  display: flex;
-      background-color: rgb(28, 62, 83);
-
-  flex-direction: column;
-  padding-left: 80px;
-} */
 .comment-card-container {
   border-top: 5px solid rgba(157, 155, 206, 0.599);
-  /* border-color: rgb(155, 95, 16); */
   flex-direction: column;
   display: flex;
-  /* flex-direction: column-reverse */
   background-color: rgba(241, 250, 238, 1);
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-.comment-card-body {
-  /* flex: 2; */
-  /* display: flex; */
-}
-
-.comment-card-delete {
-  /* flex: 3; */
-  /* justify-content: flex-end; */
-}
-
 .comment-card-voteBar {
-  /* display: flex; */
-  /* flex-direction: column; */
-
-  /* flex: 1; */
   background-color: #1b181a;
 }
 
 .article-cards-container {
   max-width: 1400px;
-  /* margin: 0; */
   margin: 0px auto 0 auto;
-  /* background-color: rgba(230, 57, 70, 1); */
-  /* display: flex; */
-  /* justify-content: space-around; */
 }
 
 .article-card-contents-football a {
-  background-color: antiquewhite;
+  background-color: rgb(241, 239, 236);
   opacity: 0.8;
   color: black;
   padding: 5px;
 }
 
 .article-card-contents-football h3 {
-  background-color: antiquewhite;
-  /* opacity: 0.8; */
+  background-color: rgb(241, 239, 236);
   color: rgb(16, 97, 16);
-  /* padding: 5px; */
 }
 
 .article-card-contents-coding h3 {
-  background-color: antiquewhite;
-  /* opacity: 0.8; */
+  background-color: rgb(241, 239, 236);
   color: rgb(146, 11, 29);
-  /* padding: 5px; */
 }
 
 .article-card-contents-cooking h3 {
   background-color: antiquewhite;
-  /* opacity: 0.8; */
   color: rgb(131, 75, 2);
-  /* padding: 5px; */
 }
 
 .article-card-contents-cooking a {
@@ -410,7 +250,6 @@ img {
 .article-card-football {
   background-image: url(./football3.jpg);
   background-size: cover;
-  /* opacity: 0.3; */
   position: relative;
   overflow: hidden;
 }
@@ -418,7 +257,6 @@ img {
 .article-card-cooking {
   background-image: url(./cooking.jpg);
   background-size: cover;
-  /* opacity: 0.3; */
   position: relative;
   overflow: hidden;
 }
@@ -426,16 +264,14 @@ img {
 .article-card-coding {
   background-image: url(./coding.jpg);
   background-size: cover;
-  /* opacity: 0.3; */
   position: relative;
-  /* border-radius: 10px; */
   overflow: hidden;
 }
 
 .article-card-contents {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  border-radius: 25px;
 }
 
 .article-card {
@@ -444,35 +280,13 @@ img {
   flex-direction: column;
   padding: 15px;
   margin-bottom: 20px;
-  /* margin-left: 40px; */
-  /* background-color: rgb(210, 26, 238); */
   box-sizing: border-box;
-  flex-basis: 31%;
+  flex-basis: 29%;
   cursor: pointer;
   transition: 0.4s;
   border-radius: 0px;
-  background-color: black;
-  /* background-image: linear-gradient(
-    to bottom,
-    rgba(246, 245, 174, 1),
-    rgba(246, 245, 174, 1) 85%,
-    rgba(215, 232, 186, 1) 15%
-  ); */
-  /* background-attachment: fixed; */
   background-repeat: no-repeat;
 }
-
-/* .article-background-football:before {
-  background-image: url(./football.jpeg);
-  background-size: cover;
-  opacity: 0.3;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-} */
 
 .error-page {
   padding: 100px;
@@ -480,8 +294,6 @@ img {
 
 .article-card {
   background-color: rgb(221, 221, 221);
-
-  /* display: flex; */
 }
 
 .article-card:hover {
@@ -510,32 +322,25 @@ img {
   padding: 15px;
   margin-bottom: 20px;
   margin-left: 40px;
-  /* background-color: rgb(210, 26, 238); */
+  background-color: rgba(157, 155, 206, 0.599);
   box-sizing: border-box;
   flex-basis: 31%;
   cursor: pointer;
   transition: 0.4s;
   border-radius: 0px;
+
   background-image: linear-gradient(
     to bottom,
     rgba(241, 250, 238, 1),
-    rgba(241, 250, 238, 1) 86%,
-    /* rgba(230, 57, 71, 0.789) 14% */
+    rgba(241, 250, 238, 1) 86%
   );
-  /* background-attachment: fixed; */
   background-repeat: no-repeat;
-}
-
-.singleArticleBox-column-right {
-  /* flex: 1; */
 }
 
 .singleArticleBox {
   padding-top: 90px;
-  margin: 0;
   width: 90%;
   display: flex;
-  /* background-color: beige; */
 }
 
 @supports (display: grid) {

@@ -27,7 +27,7 @@ export default class VoteBar extends Component {
           class="vote-button"
           disabled={dislikeBtnClicked}
           onClick={() => {
-            this.patchVote("up");
+            this.patchVote(1);
           }}
         >
           <img alt="like-button" src={Like} width="20px" height="20px"></img>
@@ -36,7 +36,7 @@ export default class VoteBar extends Component {
         <button
           disabled={likeBtnClicked}
           onClick={() => {
-            this.patchVote("down");
+            this.patchVote(-1);
           }}
         >
           <img
@@ -55,24 +55,17 @@ export default class VoteBar extends Component {
       inc_votes: 0
     };
 
-    // if (voteDirection === true) {
-    //   newVote.inc_votes = 1;
-    // } else newVote.inc_votes = -1;
-
-    if (likeBtnClicked === false && voteDirection === "up") {
-      newVote.inc_votes = 1;
-    } else if (likeBtnClicked === true && voteDirection === "up") {
-      newVote.inc_votes = -1;
-    } else if (dislikeBtnClicked === false && voteDirection === "down") {
-      newVote.inc_votes = -1;
-    } else if (dislikeBtnClicked === true && voteDirection === "down") {
-      newVote.inc_votes = 1;
+    if (likeBtnClicked === false && voteDirection === 1) {
+      newVote.inc_votes++;
+    } else if (likeBtnClicked === true && voteDirection === 1) {
+      newVote.inc_votes--;
+    } else if (dislikeBtnClicked === false && voteDirection === -1) {
+      newVote.inc_votes--;
+    } else if (dislikeBtnClicked === true && voteDirection === -1) {
+      newVote.inc_votes++;
     }
 
-    // if (dislikeBtnClicked === false && voteDirection === "down") {
-    //   newVote.inc_votes = -1;
-    // } else newVote.inc_votes = 1;
-    if (voteDirection === "up") {
+    if (voteDirection === 1) {
       this.setState(currentState => {
         return {
           likeBtnClicked: !currentState.likeBtnClicked,
@@ -81,7 +74,7 @@ export default class VoteBar extends Component {
       });
     }
 
-    if (voteDirection === "down") {
+    if (voteDirection === -1) {
       this.setState(currentState => {
         return {
           dislikeBtnClicked: !currentState.dislikeBtnClicked,

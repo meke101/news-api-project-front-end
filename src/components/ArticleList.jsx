@@ -7,7 +7,6 @@ import * as api from "../Api";
 
 export default class ArticleList extends Component {
   state = { articles: [], isLoading: true, err: null };
-  // const { err } = this.state;
   if(err) {
     return <ErrorPage {...this.state.err} />;
   }
@@ -18,18 +17,12 @@ export default class ArticleList extends Component {
 
     return (
       <div class="wrapper">
-        {/* <h2 id="ArticlesTitle">Welcome to our splendid list of articles!</h2> */}
         <TopicSearchBar displayNewArticles={this.displayNewArticles} />
         <SortBar displayNewArticles={this.displayNewArticles} />
 
         <div class="article-cards-container">
           {this.state.articles.map(article => {
-            return (
-              // <div class="article-card">
-
-              <ArticleCard key={article.article_id} article={article} />
-              // </div>
-            );
+            return <ArticleCard key={article.article_id} article={article} />;
           })}
         </div>
       </div>
