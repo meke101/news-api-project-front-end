@@ -8,7 +8,7 @@ export default function CommentCard({ comment, deleteComment, currentUser }) {
   return (
     <div class="comment-card-container">
       <div class="comment-card-body">
-        <VoteBar comment_id={comment_id} votes={votes} />
+        <VoteBar id={comment_id} votes={votes} type={"comments"} />
         <h5>
           <b> {author}</b> - <i> {body} </i>
         </h5>

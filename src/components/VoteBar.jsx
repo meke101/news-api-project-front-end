@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Like from "../Like.png";
 import Dislike from "../Dislike.png";
-import { updateCommentVote, updateArticleVote } from "../Api";
+import { updateVote } from "../Api";
 
 export default class VoteBar extends Component {
   state = {
@@ -83,12 +83,8 @@ export default class VoteBar extends Component {
       });
     }
 
-    const { comment_id, article_id } = this.props;
+    const { id, type } = this.props;
 
-    if (comment_id) {
-      updateCommentVote(comment_id, newVote);
-    } else {
-      updateArticleVote(article_id, newVote);
-    }
+    updateVote(id, newVote, type);
   };
 }

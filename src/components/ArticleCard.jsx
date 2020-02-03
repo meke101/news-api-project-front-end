@@ -33,7 +33,7 @@ export default function ArticleCard({ article }) {
           </p>
         </Link>
       </div>
-      <VoteBar article_id={article_id} votes={votes} />
+      <VoteBar id={article_id} votes={votes} type={"articles"} />
     </div>
   );
 }

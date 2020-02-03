@@ -30,10 +30,6 @@ export const filterArticles = params => {
   return axios.get(`${baseURL}/articles?`, params);
 };
 
-export const updateCommentVote = (comment_id, newVote) => {
-  return axios.patch(`${baseURL}/comments/${comment_id}`, newVote);
-};
-
-export const updateArticleVote = (article_id, newVote) => {
-  return axios.patch(`${baseURL}/articles/${article_id}`, newVote);
+export const updateVote = (comment_id, newVote, type) => {
+  return axios.patch(`${baseURL}/${type}/${comment_id}`, newVote);
 };
